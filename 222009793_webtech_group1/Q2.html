@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MULTIPLE PAGE </title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            text-align: center;
+        }
+        nav {
+            background-color: #f4f4f4;
+            padding: 10px 20px;
+            text-align: center;
+        }
+        nav a {
+            margin-right: 20px;
+            text-decoration: none;
+            color: #333;
+        }
+        .content {
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>WELCOME TO MULTIPLE-PAGE  </h1>
+</header>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="list.html">List</a>
+    <a href="form.html">Form</a>
+    <a href="table.html">Table</a>
+    <a href="radio.html">Radio Button</a>
+</nav>
+
+<div class="content">
+    <!-- Home Page -->
+    <section id="home">
+        <h2>Home Page</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    </section>
+
+    <!-- List Page -->
+    <section id="list">
+        <h2>List Page</h2>
+        <ul>
+            <li>Item 1=pen</li>
+            <li>Item 2=book</li>
+            <li>Item 3=machine</li>
+            <li>Item 4=smartphone</li>
+            <li>Item 5=table</li>
+            <li>Item 6=chair</li>
+            <li>Item 7=house</li>
+            <li>Item 8=shoes</li>
+            <li>Item 9=tablet</li>
+            <li>Item 10=notebook</li>
+        </ul>
+    </section>
+
+    <!-- Form Page -->
+    <section id="form">
+        <h2>Form Page</h2>
+        <form>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required><br><br>
+            <label for="age">Age:</label>
+            <input type="number" id="age" name="age" required><br><br>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required><br><br>
+            <button type="submit">Submit</button>
+        </form>
+    </section>
+
+    <!-- Table Page -->
+    <section id="table">
+        <h2>Table Page</h2>
+        <table border="1">
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Email</th>
+            </tr>
+            <tr>
+                <td>John</td>
+                <td>25</td>
+                <td>john33@gmail.com</td>
+            </tr>
+            <tr>
+                <td>Alice</td>
+                <td>30</td>
+                <td>alice30@gmail.com</td>
+            </tr>
+            <tr>
+                <td>Bob</td>
+                <td>22</td>
+                <td>bob22@gmail.com</td>
+            </tr>
+        </table>
+    </section>
+
+    <!-- Radio Button Page -->
+    <section id="radio">
+        <h2>Radio Button Page</h2>
+        <input type="radio" id="option1" name="option" value="option1">
+        <label for="option1">Option 1</label><br>
+        <input type="radio" id="option2" name="option" value="option2">
+        <label for="option2">Option 2</label><br>
+        <input type="radio" id="option3" name="option" value="option3">
+        <label for="option3">Option 3</label><br>
+    </section>
+</div>
+
+<script>
+    // JavaScript to switch between pages
+    const sections = document.querySelectorAll('section');
+    const links = document.querySelectorAll('nav a');
+
+    links.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href').substring(1);
+            sections.forEach(section => {
+                section.style.display = 'none';
+                if (section.id === targetId) {
+                    section.style.display = 'block';
+                }
+            });
+        });
+    });
+</script>
+
+</body>
+</html>
+
